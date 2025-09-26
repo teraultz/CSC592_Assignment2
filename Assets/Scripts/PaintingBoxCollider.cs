@@ -12,17 +12,19 @@ public class PaintingBoxCollider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spotlight = GetComponent<Light>();
         hasTriggered = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        spotlight.range = 100;
-        if (!hasTriggered)
+        if (other.CompareTag("Player"))
         {
-            VisitPaintings.paintingsVisited += 1;
-            hasTriggered = true;
+            spotlight.range = 100;
+            if (!hasTriggered)
+            {
+                VisitPaintings.paintingsVisited += 1;
+                hasTriggered = true;
+            }
         }
     }
 

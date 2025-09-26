@@ -18,7 +18,8 @@ public class VisitPaintings : MonoBehaviour
     {
         if (paintingsVisited == 10)
         {
-            
+            Debug.Log("Finished");
+
         }
     }
 }
